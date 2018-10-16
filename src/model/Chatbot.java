@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Chatbot
 {
-	private ArrayList<String> respondList = new ArrayList<String>();
+	private ArrayList<String> responseList = new ArrayList<String>();
 	private ArrayList<String> spookyList = new ArrayList<String>();
 	private String content;
 	private String currentUser;
@@ -12,6 +12,18 @@ public class Chatbot
 	
 	
 	public Chatbot()
+	{
+		this.joke = "What is a pirate's favorite restaurant? ARRRRR-by's";
+		this.content = new String("boring content drab empty blah");
+		this.currentUser = new String("This is the default user :( boring!!!");
+		
+		this.responseList = new ArrayList<String>();
+		this.spookyList = new ArrayList<String>();
+		
+		buildTheLists();
+	}
+	
+	private void buildTheLists()
 	{
 		
 	}
