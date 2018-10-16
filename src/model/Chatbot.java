@@ -2,6 +2,8 @@ package model;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 public class Chatbot
 {
 	private ArrayList<String> responseList = new ArrayList<String>();
@@ -25,7 +27,30 @@ public class Chatbot
 	
 	private void buildTheLists()
 	{
+		responseList.add("Hello! How are you?");
+		responseList.add("Goodbye - no more talking!");
 		
+		responseList.add("That's not very nice.");
+		responseList.add("That's offensive!");
+		responseList.add("Feels bad man.");
+		responseList.add("Lol wut?");
+		responseList.add("¯\\_(ツ)_/¯");
+		responseList.add("no u");
+		
+		spookyList.add("Halloween is better than Cashmas!");
+		spookyList.add("Jack Skellington!!!!");
+		spookyList.add("Boo!!!!");
+		spookyList.add("2 spooky 4 me!!");
+		spookyList.add("Halloween is just a cosplay!");
+	}
+	
+	public String processText(String userText)
+	{
+		String answer = "";
+		answer += "You said: " + userText;
+		JOptionPane.showMessageDialog(null, answer);
+		
+		return answer;
 	}
 	
 	public Chatbot(String userIput)
