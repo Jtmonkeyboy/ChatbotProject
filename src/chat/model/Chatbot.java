@@ -1,4 +1,4 @@
-package model;
+package chat.model;
 
 import java.util.ArrayList;
 
@@ -61,6 +61,16 @@ public class Chatbot
 	public void askName()
 	{
 		
+	}
+	
+	public ArrayList<String> getSpookyList()
+	{
+		return spookyList;
+	}
+	
+	public ArrayList<String> getResponseList()
+	{
+		return responseList;
 	}
 	
 	public String getContent()
