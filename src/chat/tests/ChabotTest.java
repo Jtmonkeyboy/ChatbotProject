@@ -108,7 +108,8 @@ public class ChabotTest
 	public void testBuildLists()
 	{
 		assertTrue("The responseList is not properly built by the constructor", testedBot.getResponseList().size() > 15);
-		assertTrue("The spookyList is not properly built by the constructor", testedBot.getSpookyList().size() > 8);
+
+
 	}
 
 }

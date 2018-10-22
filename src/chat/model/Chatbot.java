@@ -27,27 +27,39 @@ public class Chatbot
 	
 	private void buildTheLists()
 	{
-		responseList.add("Hello! How are you?");
+		responseList.add("How are you?");
+		responseList.add(0, "Hello");
 		responseList.add("Goodbye - no more talking!");
-		
 		responseList.add("That's not very nice.");
 		responseList.add("That's offensive!");
 		responseList.add("Feels bad man.");
 		responseList.add("Lol wut?");
 		responseList.add("¯\\_(ツ)_/¯");
 		responseList.add("no u");
+		responseList.add("I love you!");
+		responseList.add("Stop!");
+		responseList.add("That is very kind.");
+		responseList.add("*Jumps out window*");
+		responseList.add("*Just stares*");
+		responseList.add("What is the meaning of life?");
+		responseList.add("Are we friends?");
 		
-		spookyList.add("Halloween is better than Cashmas!");
+		spookyList.add("Halloween");
 		spookyList.add("Jack Skellington!!!!");
 		spookyList.add("Boo!!!!");
 		spookyList.add("2 spooky 4 me!!");
 		spookyList.add("Halloween is just a cosplay!");
+		spookyList.add("Scary!!");
+		spookyList.add("*Chills down your spine*");
+		spookyList.add("Trick or Treat?");
+		spookyList.add("Zombies are coming!");
 	}
 	
 	public String processText(String userText)
 	{
 		String answer = "";
 		answer += "You said: " + userText;
+		answer += "Chatbot says: " + userText;
 		JOptionPane.showMessageDialog(null, answer);
 		
 		return answer;
