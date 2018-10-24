@@ -31,6 +31,7 @@ public class ChatController
 		String userResponse = JOptionPane.showInputDialog(null, "Hi What's up?");
 		output = simpleBot.processText(userResponse);
 		
+		
 		return output;
 	}
 	

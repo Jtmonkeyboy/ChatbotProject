@@ -25,6 +25,11 @@ public class Chatbot
 		buildTheLists();
 	}
 	
+	public Chatbot(String userIput)
+	{
+		
+	}
+	
 	private void buildTheLists()
 	{
 		responseList.add("How are you?");
@@ -58,16 +63,11 @@ public class Chatbot
 	public String processText(String userText)
 	{
 		String answer = "";
-		answer += "You said: " + userText;
+		answer += "You said: " + userText + "\n";
 		answer += "Chatbot says: " + userText;
 		JOptionPane.showMessageDialog(null, answer);
 		
 		return answer;
-	}
-	
-	public Chatbot(String userIput)
-	{
-		
 	}
 	
 	public void askName()
@@ -115,5 +115,51 @@ public class Chatbot
 		this.joke = joke;
 	}
 	
+	public boolean contentChecker(String text)
+	{
+		boolean check = true;
+		
+		return check;
+	}
+	
+	public boolean spookyChecker(String userText)
+	{
+		boolean check = true;
+		
+		if(userText.equals("Easter"))
+		{
+			check = false;
+		}
+		else
+		{
+			check = true;
+		}
+		
+		return check;
+	}
+	
+	public boolean legitimacyChecker(String input)
+	{
+		boolean legit = true;
+		
+		if(input == null)
+		{
+			legit = false;
+		}
+		else if(input.length() < 2)
+		{
+			legit = false;
+		}
+		else if(input.contains("sdf") || input.contains("jkl") || input.contains("cvb"))
+		{
+			legit = false;
+		}
+		else
+		{
+			legit = true;
+		}
+		
+		return legit;
+	}
 	
 }
