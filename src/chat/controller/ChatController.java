@@ -43,13 +43,18 @@ public class ChatController
 		return output;
 	}
 	
-	public String useChatbotCheckers(String userText)
+	public ArrayList<String> useChatbotCheckers(String userText)
 	{
-		String output = "";
+		ArrayList<String> output;
 		if(userText.equalsIgnoreCase("spooky"))
 		{
-			output = "Halloween";
+			output = simpleBot.getSpookyList();
 		}
+		else
+		{
+			output = simpleBot.getResponseList();
+		}
+		
 		return output;
 	}
 	

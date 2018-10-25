@@ -69,7 +69,12 @@ public class Chatbot
 	{
 		String answer = "";
 			answer += "You said: " + userText + "\n";
-			answer += "Chatbot says: " + userText;
+			answer += "Chatbot says: " + userText + "\n";
+		
+		if(contentChecker(userText))
+		{
+			answer += "You said the special words";
+		}
 		JOptionPane.showMessageDialog(null, answer);
 		
 		return answer;
@@ -120,9 +125,30 @@ public class Chatbot
 		this.joke = joke;
 	}
 	
-	public boolean contentChecker(String text)
+	public boolean contentChecker(String testContent)
 	{
 		boolean check = true;
+		
+		if(testContent.equals(content))
+		{
+			check = true;
+		}
+		else if(testContent.startsWith(content + " "))
+		{
+			check = true;
+		}
+		else if(testContent.endsWith(" " + content))
+		{
+			check = true;
+		}
+		else if(testContent.contains(" " + content + " "))
+		{
+			check = true;
+		}
+		else
+		{
+			check = false;
+		}
 		
 		return check;
 	}
