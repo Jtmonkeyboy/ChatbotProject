@@ -25,19 +25,31 @@ public class ChatController
 		}
 	}
 	
-	public String interactWithChatbot(String text)
+	public String interactWithChatbot(String userText)
 	{
 		String output = "";
 		String userResponse = JOptionPane.showInputDialog(null, "Hi What's up?");
-		output = simpleBot.processText(userResponse);
-		
+		if(userResponse.equals(""))
+		{
+			output += "You said: null\n";
+			output += "Chatbot says: null";
+		}
+		else
+		{
+			output += "You said: " + userResponse + "\n";
+			output += "Chatbot says: " + userResponse;
+		}
 		
 		return output;
 	}
 	
-	public String useChatbotCheckers(String text)
+	public String useChatbotCheckers(String userText)
 	{
 		String output = "";
+		if(userText.equalsIgnoreCase("spooky"))
+		{
+			output = "Halloween";
+		}
 		return output;
 	}
 	

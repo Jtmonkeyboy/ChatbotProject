@@ -25,9 +25,14 @@ public class Chatbot
 		buildTheLists();
 	}
 	
-	public Chatbot(String userIput)
+	public Chatbot(String content)
 	{
+		this.content = content;
+		this.joke = new String("Your life");
+		this.currentUser = new String("user");
 		
+		this.responseList = new ArrayList<String>();
+		this.spookyList = new ArrayList<String>();
 	}
 	
 	private void buildTheLists()
@@ -63,8 +68,8 @@ public class Chatbot
 	public String processText(String userText)
 	{
 		String answer = "";
-		answer += "You said: " + userText + "\n";
-		answer += "Chatbot says: " + userText;
+			answer += "You said: " + userText + "\n";
+			answer += "Chatbot says: " + userText;
 		JOptionPane.showMessageDialog(null, answer);
 		
 		return answer;
