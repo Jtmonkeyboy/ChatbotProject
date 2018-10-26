@@ -16,7 +16,7 @@ public class Chatbot
 	public Chatbot()
 	{
 		this.joke = "What is a pirate's favorite restaurant? ARRRRR-by's";
-		this.content = new String("boring content drab empty blah");
+		this.content = new String("Cake");
 		this.currentUser = new String("This is the default user :( boring!!!");
 		
 		this.responseList = new ArrayList<String>();
@@ -71,6 +71,11 @@ public class Chatbot
 			answer += "You said: " + userText + "\n";
 			answer += "Chatbot says: " + userText + "\n";
 		
+		if(userText == null || userText.equals(""))
+		{
+			userText = "nothing";
+		}
+			
 		if(contentChecker(userText))
 		{
 			answer += "You said the special words";
