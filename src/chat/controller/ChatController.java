@@ -17,7 +17,7 @@ public class ChatController
 	
 	public void start()
 	{
-		String userInput = "";
+		String userInput = "Hi What's up?";
 		
 		while(!userInput.equalsIgnoreCase("quit"))
 		{
@@ -28,7 +28,7 @@ public class ChatController
 	public String interactWithChatbot(String userText)
 	{
 		String output = "";
-		String userResponse = JOptionPane.showInputDialog(null, "Hi What's up?");
+		String userResponse = JOptionPane.showInputDialog(null, userText);
 		if(userResponse.equals(""))
 		{
 			output += "You said: null\n";

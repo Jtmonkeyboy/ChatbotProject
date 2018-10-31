@@ -160,17 +160,15 @@ public class Chatbot
 	
 	public boolean spookyChecker(String userText)
 	{
-		boolean check = true;
+		boolean check = false;
 		
-		if(userText.equals("Easter"))
+		for(String spookyString : spookyList)
 		{
-			check = false;
+			if(userText.contains(spookyString))
+			{
+				check = true;
+			}
 		}
-		else
-		{
-			check = true;
-		}
-		
 		return check;
 	}
 	
