@@ -11,6 +11,7 @@ public class Chatbot
 	private String content;
 	private String currentUser;
 	private String joke;
+	private boolean quit;
 	
 	
 	public Chatbot()
@@ -53,6 +54,7 @@ public class Chatbot
 		responseList.add("*Just stares*");
 		responseList.add("What is the meaning of life?");
 		responseList.add("Are we friends?");
+		responseList.add("What did you say?");
 		
 		spookyList.add("Halloween");
 		spookyList.add("Jack Skellington!!!!");
@@ -68,19 +70,25 @@ public class Chatbot
 	public String processText(String userText)
 	{
 		String answer = "";
+			
+		
+		if(legitimacyChecker(userText))
+		{
+			if(contentChecker(userText))
+			{
+			answer += "You said the special words";
+			}
+			else
+			{
 			answer += "You said: " + userText + "\n";
 			answer += "Chatbot says: " + userText + "\n";
-		
-		if(userText == null || userText.equals(""))
-		{
-			userText = "nothing";
+			}
 		}
-			
-		if(contentChecker(userText))
+		else
 		{
-			answer += "You said the special words";
+			answer += "You said: Nothing\n";
+			answer += "Chatbot says: What did you say?";
 		}
-		JOptionPane.showMessageDialog(null, answer);
 		
 		return answer;
 	}
@@ -115,6 +123,11 @@ public class Chatbot
 		return joke;
 	}
 	
+	public boolean getQuit()
+	{
+		return quit;
+	}
+	
 	public void setContent(String content)
 	{
 		this.content = content;
@@ -128,6 +141,11 @@ public class Chatbot
 	public void setJoke(String joke)
 	{
 		this.joke = joke;
+	}
+	
+	public void setQuit(Boolean quit)
+	{
+		this.quit = quit;
 	}
 	
 	public boolean contentChecker(String testContent)
@@ -161,7 +179,6 @@ public class Chatbot
 	public boolean spookyChecker(String userText)
 	{
 		boolean check = false;
-		
 		for(String spookyString : spookyList)
 		{
 			if(userText.contains(spookyString))
