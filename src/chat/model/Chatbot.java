@@ -55,6 +55,7 @@ public class Chatbot
 		responseList.add("What is the meaning of life?");
 		responseList.add("Are we friends?");
 		responseList.add("What did you say?");
+		responseList.add("Hey! No way?! same!");
 		
 		spookyList.add("Halloween");
 		spookyList.add("Jack Skellington!!!!");
