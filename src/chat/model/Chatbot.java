@@ -75,6 +75,10 @@ public class Chatbot
 		
 		if(legitimacyChecker(userText))
 		{
+			if(userText.equals("quit"))
+			{
+				setQuit(true);
+			}
 			if(contentChecker(userText))
 			{
 			answer += "You said the special words";
@@ -87,7 +91,7 @@ public class Chatbot
 		}
 		else
 		{
-			answer += "You said: Nothing\n";
+			answer += "You said: null\n";
 			answer += "Chatbot says: What did you say?";
 		}
 		
@@ -202,7 +206,13 @@ public class Chatbot
 		{
 			legit = false;
 		}
-		else if(input.contains("sdf") || input.contains("jkl") || input.contains("cvb"))
+		else if(input.contains("sdf") || input.contains("fds") || 
+				input.contains("jkl") || input.contains("lkj") || 
+				input.contains("cvb") || input.contains("bvc") || 
+				input.contains("jhg") || input.contains("ghj") ||
+				input.contains("jf") || input.contains("kj") ||
+				input.contains("df") || input.contains("fd") ||
+				input.contains("zx") || input.contains("xz"))
 		{
 			legit = false;
 		}

@@ -31,11 +31,6 @@ public class ChatController
 		
 		output = simpleBot.processText(userResponse);
 		
-		if(userResponse.equals("quit"))
-		{
-			simpleBot.setQuit(true);
-		}
-		
 		return output;
 	}
 	
