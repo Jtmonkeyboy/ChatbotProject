@@ -12,6 +12,7 @@ public class Chatbot
 	private String currentUser;
 	private String joke;
 	private boolean quit;
+	private ArrayList<String> keyMash = new ArrayList<String>();
 	
 	
 	public Chatbot()
@@ -66,6 +67,8 @@ public class Chatbot
 		spookyList.add("*Chills down your spine*");
 		spookyList.add("Trick or Treat?");
 		spookyList.add("Zombies are coming!");
+		
+		keyMash.add("sdf");
 	}
 	
 	public String processText(String userText)
@@ -73,29 +76,29 @@ public class Chatbot
 		String answer = "";
 			
 		
-		if(legitimacyChecker(userText))
+		if(legitimacyChecker(userText)) //This checks if there is a null or the user is just keyboard mashing.
 		{
-			if(userText.equals("quit"))
+			if(userText.equals("quit")) //This is what we type if we want to quit the chatBot because we are set in an infinite loop.
 			{
 				setQuit(true);
 			}
-			if(contentChecker(userText))
+			if(contentChecker(userText)) //This checks if the use said the special word which in this case is "cake".
 			{
 			answer += "You said the special words";
 			}
-			else
+			else //This is the default saying if everything is correct.
 			{
 			answer += "You said: " + userText + "\n";
 			answer += "Chatbot says: " + userText + "\n";
 			}
 		}
-		else
+		else //The user is keyboard mashing or said nothing the code jumps straight to here to tell the user that what they said is invalid or a null.
 		{
 			answer += "You said: null\n";
 			answer += "Chatbot says: What did you say?";
 		}
 		
-		return answer;
+		return answer; //And finally returns what the system should say back.
 	}
 	
 	public void askName()
@@ -210,9 +213,15 @@ public class Chatbot
 				input.contains("jkl") || input.contains("lkj") || 
 				input.contains("cvb") || input.contains("bvc") || 
 				input.contains("jhg") || input.contains("ghj") ||
-				input.contains("jf") || input.contains("kj") ||
-				input.contains("df") || input.contains("fd") ||
-				input.contains("zx") || input.contains("xz"))
+				input.contains("jf") || input.contains("fj") ||
+				input.contains("kj") ||	input.contains("kd") || 
+				input.contains("fd") ||input.contains("df") ||
+				input.contains("zx") || input.contains("xz") || 
+				input.contains(""))
+		{
+			legit = false;
+		}
+		else if(isKeyMash(input))
 		{
 			legit = false;
 		}
@@ -222,6 +231,21 @@ public class Chatbot
 		}
 		
 		return legit;
+	}
+	
+	private boolean isKeyMash(String userText)
+	{
+		boolean isMash = false;
+		
+		for(int index = 0; index < keyMash.size(); index++)
+		{
+			if(userText.contains(keyMash.get(index)))
+			{
+				isMash = true;
+			}
+		}
+		
+		return isMash;
 	}
 	
 }
