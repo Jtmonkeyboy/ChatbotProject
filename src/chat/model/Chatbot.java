@@ -69,6 +69,29 @@ public class Chatbot
 		spookyList.add("Zombies are coming!");
 		
 		keyMash.add("sdf");
+		keyMash.add("fds");
+		keyMash.add("jkl");
+		keyMash.add("lkj");
+		keyMash.add("cvb");
+		keyMash.add("bvc");
+		keyMash.add("ghj");
+		keyMash.add("jhg");
+		keyMash.add("fsd");
+		keyMash.add("dsf");
+		keyMash.add("jlk");
+		keyMash.add("klj");
+		keyMash.add("jf");
+		keyMash.add("fj");
+		keyMash.add("kj");
+		keyMash.add("kd");
+		keyMash.add("fd");
+		keyMash.add("df");
+		keyMash.add("zx");
+		keyMash.add("xz");
+		keyMash.add("gv");
+		keyMash.add("vg");
+		keyMash.add("cx");
+		keyMash.add("xc");
 	}
 	
 	public String processText(String userText)
@@ -206,18 +229,6 @@ public class Chatbot
 			legit = false;
 		}
 		else if(input.length() < 2)
-		{
-			legit = false;
-		}
-		else if(input.contains("sdf") || input.contains("fds") || 
-				input.contains("jkl") || input.contains("lkj") || 
-				input.contains("cvb") || input.contains("bvc") || 
-				input.contains("jhg") || input.contains("ghj") ||
-				input.contains("jf") || input.contains("fj") ||
-				input.contains("kj") ||	input.contains("kd") || 
-				input.contains("fd") ||input.contains("df") ||
-				input.contains("zx") || input.contains("xz") || 
-				input.contains(""))
 		{
 			legit = false;
 		}
