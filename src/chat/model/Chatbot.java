@@ -13,6 +13,7 @@ public class Chatbot
 	private String joke;
 	private boolean quit;
 	private ArrayList<String> keyMash = new ArrayList<String>();
+	private ArrayList<String> question = new ArrayList<String>();
 	
 	
 	public Chatbot()
@@ -68,6 +69,14 @@ public class Chatbot
 		spookyList.add("Trick or Treat?");
 		spookyList.add("Zombies are coming!");
 		
+		question.add("?");
+		question.add("who");
+		question.add("what");
+		question.add("when");
+		question.add("where");
+		question.add("why");
+		question.add("how");
+		
 		keyMash.add("sdf");
 		keyMash.add("fds");
 		keyMash.add("jkl");
@@ -98,7 +107,8 @@ public class Chatbot
 	{
 		String answer = "";
 			
-		
+		int randomResponse = (int) (Math.random() * responseList.size());
+		String chatbotSays = responseList.get(randomResponse);
 		if(legitimacyChecker(userText)) //This checks if there is a null or the user is just keyboard mashing.
 		{
 			if(userText.equals("quit")) //This is what we type if we want to quit the chatBot because we are set in an infinite loop.
@@ -112,7 +122,7 @@ public class Chatbot
 			else //This is the default saying if everything is correct.
 			{
 			answer += "You said: " + userText + "\n";
-			answer += "Chatbot says: " + userText + "\n";
+			answer += "Chatbot says: " + chatbotSays + "\n";
 			}
 		}
 		else //The user is keyboard mashing or said nothing the code jumps straight to here to tell the user that what they said is invalid or a null.
@@ -242,6 +252,20 @@ public class Chatbot
 		}
 		
 		return legit;
+	}
+	
+	public boolean questionChecker(String userText)
+	{
+		boolean isQuestion = false;
+		for(int index = 0; index < question.size(); index++)
+		{
+			if(userText.contains(question.get(index)))
+			{
+				isQuestion = true;
+			}
+		}
+		
+		return isQuestion;
 	}
 	
 	private boolean isKeyMash(String userText)
