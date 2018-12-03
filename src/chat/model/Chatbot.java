@@ -2,8 +2,6 @@ package chat.model;
 
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
-
 public class Chatbot
 {
 	private ArrayList<String> responseList = new ArrayList<String>();
