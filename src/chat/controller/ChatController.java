@@ -20,20 +20,17 @@ public class ChatController
 	
 	public void start()
 	{
-		String userInput = "Hi What's up?";
-		while(!simpleBot.getQuit())
+//		String userInput = "Hi What's up?";
+/*		while(!simpleBot.getQuit())
 		{
 			userInput = interactWithChatbot(userInput);
-		}
+		}*/
 	}
 	
 	public String interactWithChatbot(String userText)
 	{
 		String output = "";
-		String userResponse = JOptionPane.showInputDialog(null, userText);
-		
-		output = simpleBot.processText(userResponse);
-		
+		output = simpleBot.processText(userText);
 		return output;
 	}
 	

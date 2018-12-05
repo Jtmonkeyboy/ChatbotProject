@@ -115,7 +115,7 @@ public class Chatbot
 			}
 			if(contentChecker(userText)) //This checks if the use said the special word which in this case is "cake".
 			{
-			answer += "You said the special words";
+			answer += "You said the special words\n";
 			}
 			else //This is the default saying if everything is correct.
 			{
@@ -125,8 +125,7 @@ public class Chatbot
 		}
 		else //The user is keyboard mashing or said nothing the code jumps straight to here to tell the user that what they said is invalid or a null.
 		{
-			answer += "You said: null\n";
-			answer += "Chatbot says: What did you say?";
+			answer += "Chatbot says: You can't say null?\n";
 		}
 		
 		return answer; //And finally returns what the system should say back.
