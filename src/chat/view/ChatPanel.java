@@ -22,6 +22,7 @@ public class ChatPanel extends JPanel
 	private JButton checkerButton;
 	private JButton loadButton;
 	private JButton saveButton;
+	private JButton resetButton;
 	private JTextField chatField;
 	private JTextArea chatArea;
 	private JScrollPane chatPane;
@@ -36,6 +37,7 @@ public class ChatPanel extends JPanel
 		checkerButton = new JButton("Check Text");
 		loadButton = new JButton("Load");
 		saveButton = new JButton("Save");
+		resetButton = new JButton("Reset");
 		
 		chatField = new JTextField("Talk to the bot here", 50);
 		chatArea = new JTextArea("Chat Area", 20, 50);
@@ -56,6 +58,7 @@ public class ChatPanel extends JPanel
 		this.add(checkerButton);
 		this.add(loadButton);
 		this.add(saveButton);
+		this.add(resetButton);
 		this.add(chatField);
 		this.add(chatPane);
 	}
@@ -98,6 +101,38 @@ public class ChatPanel extends JPanel
 				chatArea.append(output);
 				chatField.setText("");
 				chatArea.setCaretPosition(chatArea.getDocument().getLength());
+			}
+				});
+		
+		checkerButton.addActionListener(new ActionListener()
+				{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+			}	
+				});
+		
+		loadButton.addActionListener(new ActionListener()
+				{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+			}
+				});
+		
+		saveButton.addActionListener(new ActionListener()
+				{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+			}
+				});
+		
+		resetButton.addActionListener(new ActionListener()
+				{
+			public void actionPerformed(ActionEvent click)
+			{
+				chatArea.setText("");
 			}
 				});
 	}
