@@ -49,6 +49,11 @@ public class ChatController
 		return output;
 	}
 	
+	public void handleErrors(Exception error)
+	{
+		JOptionPane.showMessageDialog(appFrame, error.getMessage());
+	}
+	
 	public Chatbot getChatbot()
 	{
 		return simpleBot;
