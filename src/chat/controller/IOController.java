@@ -12,16 +12,19 @@ public class IOController
 	{
 		try
 		{
+			//This is the file name.
 			String filename = path;
 			Calendar date = Calendar.getInstance();
 			filename += "/" + date.get(Calendar.MONTH) + " " + date.get(Calendar.DAY_OF_MONTH);
 			filename += date.get(Calendar.HOUR)+ "-" + date.get(Calendar.MINUTE);
 			filename += " chatbot save.txt";
 			
+			//Initialization of scanner and file.
 			File saveFile = new File(filename);
 			Scanner textScanner = new Scanner(textToSave);
 			PrintWriter saveText = new PrintWriter(saveFile);
 			
+			//This is how we save the file.
 			while(textScanner.hasNext())
 			{
 				String currentLine = textScanner.nextLine();
