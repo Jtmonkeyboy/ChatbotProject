@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -131,6 +132,7 @@ public class ChatPanel extends JPanel
 			{
 				String chatText = chatArea.getText();
 				String path = ".";
+				path = getPath("save");
 				IOController.saveText(appController, path, chatText);
 				chatArea.setText("Chat saved! :)");
 			}
@@ -143,6 +145,27 @@ public class ChatPanel extends JPanel
 				chatArea.setText("");
 			}
 				});
+	}
+	
+	private String getPath(String choice)
+	{
+		String path = ".";
+		int result = -99;
+		JFileChooser fileChooser = new JFileChooser();
+		if(choice.equals("save"))
+		{
+			path = fileChooser.getCurrentDirectory().getAbsolutePath();
+		}
+		else
+		{
+			result = fileChooser.showOpenDialog(this);
+			if(result == JFileChooser.APPROVE_OPTION)
+			{
+				path = fileChooser.getSelectedFile().getAbsolutePath();
+			}
+		}
+		
+		return path;
 	}
 	
 	private void setupScrollPane()
